@@ -78,6 +78,15 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="edsdk_header\EDSDK.h" />
+    <ClInclude Include="edsdk_header\EDSDKErrors.h" />
+    <ClInclude Include="edsdk_header\EDSDKTypes.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="EDSDK_project.rc" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
