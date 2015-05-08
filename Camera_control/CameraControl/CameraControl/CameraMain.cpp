@@ -36,10 +36,9 @@ int main()
 		if (err == EDS_ERR_OK)
 		{
 			err = EdsGetChildAtIndex(cameraList, 0, &camera);
-			if (count > 1)
-			{
+			cout << "camera1 is on" << endl;
+
 				err = EdsGetChildAtIndex(cameraList, 1, &camera2);
-			}
 		}
 
 		//release camera list
@@ -63,6 +62,7 @@ int main()
 
 		//영상촬영 준비
 		EdsUInt32 device;
+		EdsUInt32 device2;
 		EdsUInt32 record_start = 4;
 		EdsUInt32 record_stop = 0;
 		err = EdsGetPropertyData(camera, kEdsPropID_Evf_OutputDevice, 0, sizeof(device), &device);
@@ -76,6 +76,20 @@ int main()
 		EdsUInt32 saveTo = kEdsSaveTo_Camera;
 		err = EdsSetPropertyData(camera, kEdsPropID_SaveTo, 0, sizeof(saveTo), &saveTo);
 
+		if (count > 1)
+		{
+			err = EdsGetPropertyData(camera2, kEdsPropID_Evf_OutputDevice, 0, sizeof(device2), &device2);
+
+			if (err == EDS_ERR_OK)
+			{
+				device |= kEdsEvfOutputDevice_TFT;
+				err = EdsSetPropertyData(camera2, kEdsPropID_Evf_OutputDevice, 0, sizeof(device2), &device2);
+			}
+
+			EdsUInt32 saveTo = kEdsSaveTo_Camera;
+			err = EdsSetPropertyData(camera2, kEdsPropID_SaveTo, 0, sizeof(saveTo), &saveTo);
+		}
+
 		//do something
 		while (1)
 		{
@@ -84,14 +98,17 @@ int main()
 			if (input == 1)
 			{
 				err = EdsSetPropertyData(camera, kEdsPropID_Record, 0, sizeof(record_start), &record_start);
+				if (count>1)	err = EdsSetPropertyData(camera2, kEdsPropID_Record, 0, sizeof(record_start), &record_start);
 			}
 			else if (input == 2)
 			{
 				err = EdsSetPropertyData(camera, kEdsPropID_Record, 0, sizeof(record_start), &record_stop);
+				if (count>1)	err = EdsSetPropertyData(camera2, kEdsPropID_Record, 0, sizeof(record_start), &record_stop);
 			}
 			else if (input == 0)
 			{
 				err = EdsGetPropertyData(camera, kEdsPropID_Evf_OutputDevice, 0, sizeof(device), &device);
+				if (count>1)	err = EdsGetPropertyData(camera2, kEdsPropID_Evf_OutputDevice, 0, sizeof(device2), &device2);
 				break;
 			}
 
@@ -102,12 +119,14 @@ int main()
 		if (err == EDS_ERR_OK)
 		{
 			err = EdsCloseSession(camera);
+			if (count>1) err = EdsCloseSession(camera2);
 		}
 
 		//release camera
 		if (camera != NULL)
 		{
 			EdsRelease(camera);
+			EdsRelease(camera2);
 		}
 
 		//Terminate SDK
