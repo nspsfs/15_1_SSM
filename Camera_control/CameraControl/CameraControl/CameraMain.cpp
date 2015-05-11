@@ -98,11 +98,16 @@ int main()
 			if (input == 1)
 			{
 				start = GetTickCount();
-				err1 = EdsSetPropertyData(camera, kEdsPropID_Record, 0, sizeof(record_start), &record_start);
-				end = GetTickCount();
-				cout << end - start << endl;
-				start = GetTickCount();
+				//err1 = EdsSetPropertyData(camera, kEdsPropID_Record, 0, sizeof(record_start), &record_start);
 				err2 = EdsSetPropertyData(camera2, kEdsPropID_Record, 0, sizeof(record_start2), &record_start2);
+				end = GetTickCount();
+				//cout << end - start << endl;
+				cout << end - start << endl;
+				Sleep(1000 - (end - start));
+				cout << GetTickCount() - start << endl;
+				//start = GetTickCount();
+				//err2 = EdsSetPropertyData(camera2, kEdsPropID_Record, 0, sizeof(record_start2), &record_start2);
+				err1 = EdsSetPropertyData(camera, kEdsPropID_Record, 0, sizeof(record_start), &record_start);
 				end = GetTickCount();
 				cout << end - start << endl;
 			}
