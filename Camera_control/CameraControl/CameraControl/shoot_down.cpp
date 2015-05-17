@@ -9,8 +9,6 @@
 
 using namespace std;
 
-int liveView(EdsCameraRef camera, EdsCameraRef camera2);
-void liveView2(EdsCameraRef camera, EdsCameraRef camera2);
 void cameraSetup(EdsCameraRef* camera, EdsCameraRef* camera2);
 void recordStart(EdsCameraRef camera, EdsCameraRef camera2);
 void recordStop(EdsCameraRef camera, EdsCameraRef camera2);
@@ -35,13 +33,37 @@ int main()
 	EdsError err1 = EDS_ERR_OK;
 	EdsCameraRef camera = NULL;
 	EdsCameraRef camera2 = NULL;
+	cameraSetup(&camera, &camera2);
 	bool end = false;
 	bool isShoot = false;
-	cameraSetup(&camera, &camera2);
-	if (liveView(camera, camera2) == 200)
+	int input;
+	while (1)
 	{
-		liveView(camera, camera2);
+		cin >> input;
+		switch (input)
+		{
+		case 0:
+			finish(camera,camera2);
+			break;
+		case 1:
+			if (isShoot == false)
+			{
+				isShoot = true;
+				recordStart(camera, camera2);
+			}
+			break;
+		case 2:
+			if (isShoot == true)
+			{
+				recordStop(camera, camera2);
+				finish(camera, camera2);
+				end = true;
+			}
+			break;
+		}
+		if (end == true) break;
 	}
+
 	
 	return 0;
 }
@@ -98,8 +120,8 @@ void cameraSetup(EdsCameraRef* camera, EdsCameraRef* camera2)
 
 	if (err1 == EDS_ERR_OK || err2 == EDS_ERR_OK)
 	{
-		device |= kEdsEvfOutputDevice_PC;
-		device2 |= kEdsEvfOutputDevice_PC;
+		device |= kEdsEvfOutputDevice_TFT;
+		device2 |= kEdsEvfOutputDevice_TFT;
 		err1 = EdsSetPropertyData(camera11, kEdsPropID_Evf_OutputDevice, 0, sizeof(device), &device);
 		err2 = EdsSetPropertyData(camera22, kEdsPropID_Evf_OutputDevice, 0, sizeof(device2), &device2);
 	}
@@ -130,7 +152,6 @@ void recordStart(EdsCameraRef camera, EdsCameraRef camera2)
 	cout << "Delay : " << end - start << "(" << (end-start) / 30 << " frame)" << endl;
 	cvDestroyWindow("Example1");
 	cvDestroyWindow("Example2");
-	liveView(camera, camera2);
 }
 
 void recordStop(EdsCameraRef camera, EdsCameraRef camera2)
@@ -290,114 +311,4 @@ void getNowTime()
 	strftime(buff, 20, "%Y%m%d%H%M%S", localtime(&now));
 	nowtime = (string)buff;
 	return;
-}
-
-void liveView2(EdsCameraRef camera1, EdsCameraRef camera2)
-{
-	EdsError err1 = EDS_ERR_OK;
-	EdsError err2 = EDS_ERR_OK;
-
-	EdsStreamRef stream = NULL;
-	EdsEvfImageRef evfImage = NULL;
-	EdsStreamRef stream2 = NULL;
-	EdsEvfImageRef evfImage2 = NULL;
-
-	while (1)
-	{
-		err1 = EdsCreateMemoryStream(0, &stream);
-		err1 = EdsCreateFileStream("live1.jpg", kEdsFileCreateDisposition_CreateAlways, kEdsAccess_ReadWrite, &stream);
-		err1 = EdsCreateEvfImageRef(stream, &evfImage);
-		err1 = EdsDownloadEvfImage(camera1, evfImage);
-		EdsRelease(stream);
-		EdsRelease(evfImage);
-		err2 = EdsCreateMemoryStream(0, &stream2);
-		err2 = EdsCreateFileStream("live2.jpg", kEdsFileCreateDisposition_CreateAlways, kEdsAccess_ReadWrite, &stream2);
-		err2 = EdsCreateEvfImageRef(stream2, &evfImage2);
-		err2 = EdsDownloadEvfImage(camera2, evfImage2);
-		EdsRelease(stream2);
-		EdsRelease(evfImage2);
-
-		Sleep(100);
-	}
-}
-
-
-int liveView(EdsCameraRef camera1, EdsCameraRef camera2)
-{
-	EdsError err1 = EDS_ERR_OK;
-	EdsError err2 = EDS_ERR_OK;
-
-	EdsStreamRef stream = NULL;
-	EdsEvfImageRef evfImage = NULL;
-	EdsStreamRef stream2 = NULL;
-	EdsEvfImageRef evfImage2 = NULL;
-	
-	IplImage* img;
-	IplImage* img2;
-	char c;
-	cvNamedWindow("Example1", CV_WINDOW_AUTOSIZE);
-	cvNamedWindow("Example2", CV_WINDOW_AUTOSIZE);
-
-	while (1)
-	{
-		err1 = EdsCreateMemoryStream(0, &stream);
-		err1 = EdsCreateFileStream("live1.jpg", kEdsFileCreateDisposition_CreateAlways, kEdsAccess_ReadWrite, &stream);
-		err1 = EdsCreateEvfImageRef(stream, &evfImage);
-		err1 = EdsDownloadEvfImage(camera1, evfImage);
-		EdsRelease(stream);
-		EdsRelease(evfImage);
-		err2 = EdsCreateMemoryStream(0, &stream2);
-		err2 = EdsCreateFileStream("live2.jpg", kEdsFileCreateDisposition_CreateAlways, kEdsAccess_ReadWrite, &stream2);
-		err2 = EdsCreateEvfImageRef(stream2, &evfImage2);
-		err2 = EdsDownloadEvfImage(camera2, evfImage2);
-		EdsRelease(stream2);
-		EdsRelease(evfImage2);
-
-		img = cvLoadImage("live1.jpg");
-		img2 = cvLoadImage("live2.jpg");
-
-		cvShowImage("Example1", img);
-		cvShowImage("Example2", img2);
-		//Sleep(33);
-		cvReleaseImage(&img);
-		cvReleaseImage(&img2);
-
-		c = cvWaitKey(10);
-		if (c == 27)	break;
-		else if (c == 49)
-		{
-			EdsRelease(stream);
-			EdsRelease(evfImage);
-			EdsRelease(stream2);
-			EdsRelease(evfImage2);
-			cvReleaseImage(&img);
-			cvReleaseImage(&img2);
-			cvDestroyWindow("Example1");
-			cvDestroyWindow("Example2");
-			recordStart(camera1, camera2);
-			return 1;
-		}
-		else if (c == 50)
-		{
-			
-			recordStop(camera1, camera2);
-			cvDestroyWindow("Example1");
-			cvDestroyWindow("Example2");
-			finish(camera1, camera2);
-			break;
-		}
-		else if (c == 48)
-		{
-			finish(camera1, camera2);
-			break;
-		}
-
-
-	}
-	//cvWaitKey(0);
-
-	cvDestroyWindow("Example1");
-	cvDestroyWindow("Example2");
-
-	return 0;
 }
