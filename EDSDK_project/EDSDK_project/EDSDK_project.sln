@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EDSDK_project", "EDSDK_project\EDSDK_project.vcxproj", "{02440620-BF0D-401E-89C7-E9CB6F486D2F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cameraControl", "cameraControl\cameraControl.vcxproj", "{00F3FCA7-3711-4A69-B59A-63BFF1FF39CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -15,6 +17,10 @@ Global
 		{02440620-BF0D-401E-89C7-E9CB6F486D2F}.Debug|Win32.Build.0 = Debug|Win32
 		{02440620-BF0D-401E-89C7-E9CB6F486D2F}.Release|Win32.ActiveCfg = Release|Win32
 		{02440620-BF0D-401E-89C7-E9CB6F486D2F}.Release|Win32.Build.0 = Release|Win32
+		{00F3FCA7-3711-4A69-B59A-63BFF1FF39CC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{00F3FCA7-3711-4A69-B59A-63BFF1FF39CC}.Debug|Win32.Build.0 = Debug|Win32
+		{00F3FCA7-3711-4A69-B59A-63BFF1FF39CC}.Release|Win32.ActiveCfg = Release|Win32
+		{00F3FCA7-3711-4A69-B59A-63BFF1FF39CC}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

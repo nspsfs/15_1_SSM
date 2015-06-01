@@ -3,14 +3,13 @@
 
 using namespace std;
 
-
 int main()
 {
 	//EDSDK 초기 설정관련
 	EdsError err = EDS_ERR_OK;
 	EdsCameraRef camera = NULL;
 	EdsCameraListRef cameraList = NULL;
-	EdsUInt32 count = 0;
+	EdsUInt32 count1 = 0;
 	bool isSDKLoaded = false;
 
 	//SDK 시작
@@ -27,8 +26,8 @@ int main()
 		//카메라 갯수 받아오기
 		if (err = EDS_ERR_OK)
 		{
-			err = EdsGetChildCount(cameraList, &count);
-			if (count == 0)
+			err = EdsGetChildCount(cameraList, &count1);
+			if (count1 == 0)
 			{
 				err = EDS_ERR_DEVICE_NOT_FOUND;
 			}
@@ -77,6 +76,6 @@ int main()
 	}
 
 
-
+	return 0;
 
 }
