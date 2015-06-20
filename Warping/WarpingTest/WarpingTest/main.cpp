@@ -1,3 +1,4 @@
+#if 0
 #include <time.h> 
 #include <stdio.h>
 
@@ -503,3 +504,4 @@ void MergeImages(IplImage* Image1, IplImage* Image2, IplImage* dstImage)
 	cvResetImageROI(dstImage);
 
 }
+#endif

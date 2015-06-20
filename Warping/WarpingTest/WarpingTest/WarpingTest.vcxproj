@@ -83,6 +83,7 @@
     <ClCompile Include="sample.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="warping_test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
