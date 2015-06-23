@@ -69,7 +69,7 @@ int main()
 	LeftImg = cvLoadImage(Left_Image, CV_LOAD_IMAGE_GRAYSCALE);
 	RightImg = cvLoadImage(Right_Image, CV_LOAD_IMAGE_GRAYSCALE);
 
-#if 1 //surf mode
+ //surf mode
 	//surf 특징점 찾기
 	CvMemStorage* storage = cvCreateMemStorage(0);
 	CvSURFParams params = cvSURFParams(3000, 0);
@@ -89,7 +89,7 @@ int main()
 	for (int i = 0; i < (T1_Keypoints ? T1_Keypoints->total : 0); i++)
 	{
 		surf1 = (CvSURFPoint*)cvGetSeqElem(T1_Keypoints, i);
-		cvCircle(LeftImg, cvPoint(surf1->pt.x, surf1->pt.y), 3, CV_RGB(255, 0, 255), 2, 8);
+		//cvCircle(LeftImg, cvPoint(surf1->pt.x, surf1->pt.y), 3, CV_RGB(255, 0, 255), 2, 8);
 	}
 
 	//Right 특징점 뿌리기
@@ -97,7 +97,7 @@ int main()
 	for (int i = 0; i < (T2_Keypoints ? T2_Keypoints->total : 0); i++)
 	{
 		surf2 = (CvSURFPoint*)cvGetSeqElem(T2_Keypoints, i);
-		cvCircle(RightImg, cvPoint(surf2->pt.x, surf2->pt.y), 3, CV_RGB(255, 0, 255), 2, 8);
+		//cvCircle(RightImg, cvPoint(surf2->pt.x, surf2->pt.y), 3, CV_RGB(255, 0, 255), 2, 8);
 	}
 	cvShowImage("LEFT", LeftImg);
 	cvShowImage("RIGHT", RightImg);
@@ -139,11 +139,7 @@ int main()
 	cout << finish - start << endl;
 	cvWaitKey(0);
 
-	cvReleaseImage(&LeftImg);
-	cvReleaseImage(&RightImg);
-#endif
-
-#if 1	//호모그래피 계산
+	//호모그래피 계산
 	CvMat M1, M2;
 	double H[9];
 	CvMat mxH = cvMat(3, 3, CV_64F, H);
@@ -167,18 +163,20 @@ int main()
 
 	cvWarpPerspective(LeftImg, WarpImg, &mxH);
 	cvShowImage("warp", WarpImg);
-	//cvSaveImage("result1.jpg", WarpImg);
+	cvSaveImage("result1.jpg", WarpImg);
 	cvWaitKey(0);
 	cvSetImageROI(WarpImg, cvRect(0, 0, RightImg->width, RightImg->height));
-	cvCopy(RightImg, WarpImg);
 	cvResetImageROI(WarpImg);
-	cvShowImage("warp", WarpImg);
+	cvCopy(RightImg, WarpImg);
+	//cvShowImage("warp", WarpImg);
 	//cvSaveImage("result2.jpg", WarpImg);
-	cvWaitKey(0);
+	//cvWaitKey(0);
 
 
 
-#endif
+	cvReleaseImage(&LeftImg);
+	cvReleaseImage(&RightImg);
+	cvReleaseImage(&WarpImg);
 }
 
 
