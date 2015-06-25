@@ -10,6 +10,8 @@
 #include <opencv2\nonfree\nonfree.hpp>
 #include <opencv2\nonfree\features2d.hpp>
 
+
+
 /*SIFT Parameters*/
 #define nFeatures 150
 #define nOctavelayers 3
@@ -31,8 +33,8 @@
 #define ANGLE_CLOCKWISE_90 -90
 
 /*Image Path*/
-#define Left_Image "image/test4_L.jpg"
-#define Right_Image "image/test4_R.jpg"
+#define Left_Image "image/tes7_L.JPG"
+#define Right_Image "image/test7_R.JPG"
 
 using namespace std;
 using namespace cv;
@@ -79,104 +81,108 @@ int main()
 	CvSeq *T1_Descriptors = NULL;
 	cvExtractSURF(LeftImg, NULL, &T1_Keypoints, &T1_Descriptors, storage, params);
 
-	//T2 -> RightImg
-	CvSeq *T2_Keypoints = NULL;
-	CvSeq *T2_Descriptors = NULL;
-	cvExtractSURF(RightImg, NULL, &T2_Keypoints, &T2_Descriptors, storage, params);
+	////T2 -> RightImg
+	//CvSeq *T2_Keypoints = NULL;
+	//CvSeq *T2_Descriptors = NULL;
+	//cvExtractSURF(RightImg, NULL, &T2_Keypoints, &T2_Descriptors, storage, params);
 
 	//Left 특징점 뿌리기
 	CvSURFPoint* surf1;
 	for (int i = 0; i < (T1_Keypoints ? T1_Keypoints->total : 0); i++)
 	{
 		surf1 = (CvSURFPoint*)cvGetSeqElem(T1_Keypoints, i);
-		//cvCircle(LeftImg, cvPoint(surf1->pt.x, surf1->pt.y), 3, CV_RGB(255, 0, 255), 2, 8);
+		cvCircle(LeftImg, cvPoint(surf1->pt.x, surf1->pt.y), 3, CV_RGB(255, 0, 255), 2, 8);
 	}
 
 	//Right 특징점 뿌리기
-	CvSURFPoint* surf2;
-	for (int i = 0; i < (T2_Keypoints ? T2_Keypoints->total : 0); i++)
-	{
-		surf2 = (CvSURFPoint*)cvGetSeqElem(T2_Keypoints, i);
-		//cvCircle(RightImg, cvPoint(surf2->pt.x, surf2->pt.y), 3, CV_RGB(255, 0, 255), 2, 8);
-	}
+	//CvSURFPoint* surf2;
+	//for (int i = 0; i < (T2_Keypoints ? T2_Keypoints->total : 0); i++)
+	//{
+	//	surf2 = (CvSURFPoint*)cvGetSeqElem(T2_Keypoints, i);
+	//	//cvCircle(RightImg, cvPoint(surf2->pt.x, surf2->pt.y), 3, CV_RGB(255, 0, 255), 2, 8);
+	//}
 	cvShowImage("LEFT", LeftImg);
 	cvShowImage("RIGHT", RightImg);
-	//cvWaitKey(0);
-
-	IplImage* MergeImg = cvCreateImage(cvSize(LeftImg->width + RightImg->width, LeftImg->height), IPL_DEPTH_8U, 1);
-	MergeImages(LeftImg, RightImg, MergeImg);
-
-	MATCH_PAIR *pMatchPair = new MATCH_PAIR[T1_Keypoints->total];
-	int descriptor_size = params.extended ? 128 : 64;
-	num_good_match = FindMatchingPoints(T1_Keypoints, T1_Descriptors, T2_Keypoints, T2_Descriptors, descriptor_size, pMatchPair);
-
-	pt1 = new CvPoint2D32f[num_good_match];
-	pt2 = new CvPoint2D32f[num_good_match];
-
-	int x1, y1, x2, y2;
-
-	for (int k = 0; k < num_good_match; k++)
-	{
-		//매칭 k번째의 T1, T2에서의 키 포인트 정보 뽑기
-		surf1 = (CvSURFPoint*)cvGetSeqElem(T1_Keypoints, pMatchPair[k].nA);
-		x1 = cvRound(surf1->pt.x);
-		y1 = cvRound(surf1->pt.y);
-		pt1[k] = surf1->pt;
-
-		surf2 = (CvSURFPoint*)cvGetSeqElem(T2_Keypoints, pMatchPair[k].nB);
-		x2 = cvRound(surf2->pt.x) + LeftImg->width;
-		y2 = cvRound(surf2->pt.y);
-		pt2[k] = surf2->pt;
-
-		//병합 영상에 라인으로 표시하기
-		CvPoint r1 = cvPoint(x1, y1);
-		CvPoint r2 = cvPoint(x2, y2);
-		cvLine(MergeImg, r1, r2, CV_RGB(0, 0, 255));
-	}
-
-	cvShowImage("MergeImage", MergeImg);
-	finish = clock();
-	cout << finish - start << endl;
 	cvWaitKey(0);
 
-	//호모그래피 계산
-	CvMat M1, M2;
-	double H[9];
-	CvMat mxH = cvMat(3, 3, CV_64F, H);
-	M1 = cvMat(1, num_good_match, CV_32FC2, pt1);
-	M2 = cvMat(1, num_good_match, CV_32FC2, pt2);
-	cvFindHomography(&M1, &M2, &mxH, CV_RANSAC, 2);
+	//IplImage* MergeImg = cvCreateImage(cvSize(LeftImg->width + RightImg->width, LeftImg->height), IPL_DEPTH_8U, 1);
+	//MergeImages(LeftImg, RightImg, MergeImg);
 
-	//print Homography
-	printf(" Homography matrix\n");
-	for (int rows = 0; rows < 3; rows++)
-	{
-		for (int cols = 0; cols < 3; cols++)
-		{
-			printf("%lf ", cvmGet(&mxH, rows, cols));
-		}
-		printf("\n");
-	}
+	//MATCH_PAIR *pMatchPair = new MATCH_PAIR[T1_Keypoints->total];
+	//int descriptor_size = params.extended ? 128 : 64;
+	//num_good_match = FindMatchingPoints(T1_Keypoints, T1_Descriptors, T2_Keypoints, T2_Descriptors, descriptor_size, pMatchPair);
+
+	//pt1 = new CvPoint2D32f[num_good_match];
+	//pt2 = new CvPoint2D32f[num_good_match];
+
+	//int x1, y1, x2, y2;
+
+	//for (int k = 0; k < num_good_match; k++)
+	//{
+	//	//매칭 k번째의 T1, T2에서의 키 포인트 정보 뽑기
+	//	surf1 = (CvSURFPoint*)cvGetSeqElem(T1_Keypoints, pMatchPair[k].nA);
+	//	x1 = cvRound(surf1->pt.x);
+	//	y1 = cvRound(surf1->pt.y);
+	//	pt1[k] = surf1->pt;
+
+	//	surf2 = (CvSURFPoint*)cvGetSeqElem(T2_Keypoints, pMatchPair[k].nB);
+	//	x2 = cvRound(surf2->pt.x) + LeftImg->width;
+	//	y2 = cvRound(surf2->pt.y);
+	//	pt2[k] = surf2->pt;
+
+	//	//병합 영상에 라인으로 표시하기
+	//	CvPoint r1 = cvPoint(x1, y1);
+	//	CvPoint r2 = cvPoint(x2, y2);
+	//	cvLine(MergeImg, r1, r2, CV_RGB(0, 0, 255));
+	//}
+
+	//cvShowImage("MergeImage", MergeImg);
+	//cvSaveImage("image/Matching.jpg", MergeImg);
+	//finish = clock();
+	//cout << finish - start << endl;
+	//cvWaitKey(0);
+
+	////호모그래피 계산
+	//CvMat M1, M2;
+	//double H[9];
+	//CvMat mxH = cvMat(3, 3, CV_64F, H);
+	//M1 = cvMat(1, num_good_match, CV_32FC2, pt1);
+	//M2 = cvMat(1, num_good_match, CV_32FC2, pt2);
+	//cvFindHomography(&M2, &M1, &mxH, 0, 2);
+
+	////print Homography
+	//printf(" Homography matrix\n");
+	//for (int rows = 0; rows < 3; rows++)
+	//{
+	//	for (int cols = 0; cols < 3; cols++)
+	//	{
+	//		printf("%lf ", cvmGet(&mxH, rows, cols));
+	//	}
+	//	printf("\n");
+	//}
+
+
 
 	//모자이크 영상 만들기
-	IplImage* WarpImg = cvCreateImage(cvSize(LeftImg->width * 2, LeftImg->height), LeftImg->depth, LeftImg->nChannels);
-
-	cvWarpPerspective(LeftImg, WarpImg, &mxH);
+	//IplImage* WarpImg = cvCreateImage(cvSize(LeftImg->width * 2, LeftImg->height), LeftImg->depth, LeftImg->nChannels);
+	/*IplImage* WarpImg = cvCreateImage(cvSize(LeftImg->width, LeftImg->height), LeftImg->depth, LeftImg->nChannels);
+	
+	cvWarpPerspective(RightImg, WarpImg, &mxH);
 	cvShowImage("warp", WarpImg);
-	cvSaveImage("result1.jpg", WarpImg);
-	cvWaitKey(0);
-	cvSetImageROI(WarpImg, cvRect(0, 0, RightImg->width, RightImg->height));
-	cvResetImageROI(WarpImg);
+	cvSaveImage("image/result1.jpg", WarpImg);
+	cvWaitKey(0);*/
+	/*cvSetImageROI(WarpImg, cvRect(0, 0, RightImg->width, RightImg->height));
 	cvCopy(RightImg, WarpImg);
-	//cvShowImage("warp", WarpImg);
-	//cvSaveImage("result2.jpg", WarpImg);
-	//cvWaitKey(0);
+	cvResetImageROI(WarpImg);
+	cvShowImage("warp", WarpImg);
+	cvSaveImage("image/result2.jpg", WarpImg);
+	cvWaitKey(0);*/
 
 
 
 	cvReleaseImage(&LeftImg);
 	cvReleaseImage(&RightImg);
-	cvReleaseImage(&WarpImg);
+	//cvReleaseImage(&WarpImg);
 }
 
 
