@@ -24,7 +24,10 @@
     <ClCompile Include="warping_test.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="stereo_rectification.cpp">
+    <ClCompile Include="Calibration_JC_ver.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="reprojection3D.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
