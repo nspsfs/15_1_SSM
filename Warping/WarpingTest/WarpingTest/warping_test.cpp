@@ -31,8 +31,8 @@
 #define ANGLE_CLOCKWISE_90 -90
 
 /*Image Path*/
-#define Left_Image "image/test9_L.jpg"
-#define Right_Image "image/test9_R.jpg"
+#define Left_Image "image/L.jpg"
+#define Right_Image "image/R.jpg"
 
 using namespace std;
 using namespace cv;
@@ -167,13 +167,13 @@ int main()
 
 	cvWarpPerspective(LeftImg, WarpImg, &mxH);
 	cvShowImage("warp", WarpImg);
-	//cvSaveImage("result1.jpg", WarpImg);
+	cvSaveImage("result1.jpg", WarpImg);
 	cvWaitKey(0);
 	cvSetImageROI(WarpImg, cvRect(0, 0, RightImg->width, RightImg->height));
 	cvCopy(RightImg, WarpImg);
 	cvResetImageROI(WarpImg);
 	cvShowImage("warp", WarpImg);
-	//cvSaveImage("result2.jpg", WarpImg);
+	cvSaveImage("result2.jpg", WarpImg);
 	cvWaitKey(0);
 
 

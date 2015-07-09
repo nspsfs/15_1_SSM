@@ -88,8 +88,8 @@ int yw_panorama(int _panorama_mode, int _feature, int _num_img)
 	int num_good_match = 0;
 
 
-	SideImg = cvLoadImage("test4_L.jpg", CV_LOAD_IMAGE_GRAYSCALE);
-	CenterImg = cvLoadImage("test4_R.jpg", CV_LOAD_IMAGE_GRAYSCALE);
+	SideImg = cvLoadImage("image/L.jpg", CV_LOAD_IMAGE_GRAYSCALE);
+	CenterImg = cvLoadImage("image/R.jpg", CV_LOAD_IMAGE_GRAYSCALE);
 
 	if (feature == FEATURE_SURF){
 		//surf Æ¯Â¡Á¡ Ã£±â
@@ -505,3 +505,4 @@ void MergeImages(IplImage* Image1, IplImage* Image2, IplImage* dstImage)
 
 }
 #endif
+
