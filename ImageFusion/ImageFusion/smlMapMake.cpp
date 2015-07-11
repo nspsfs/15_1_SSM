@@ -1,8 +1,9 @@
-#if 1
+#if 0
 
 #include "opencv2\opencv.hpp"
 #include "opencv2\highgui\highgui.hpp"
 #include <iostream>
+#include <chrono>
 
 using namespace cv;
 
@@ -10,7 +11,6 @@ int main()
 {
 	Mat img1 = imread("image/test2_1.bmp");
 	Mat img2 = imread("image/test2_2.bmp");
-	//Mat result(img1.size().height, img1.size().width, CV_8UC1);
 	Mat img1g;
 	Mat img2g;
 	
@@ -18,11 +18,12 @@ int main()
 
 	cvtColor(img1, img1g, COLOR_BGR2GRAY);
 	cvtColor(img2, img2g, COLOR_BGR2GRAY);
-	Mat result = img1g.clone();
 
 	Mat sml1(img1g.size().height, img1g.size().width, CV_8UC1);
 	Mat sml2(img2g.size().height, img2g.size().width, CV_8UC1);
-	
+	Mat result = img1g.clone();
+
+	std::chrono::system_clock::time_point start = std::chrono::system_clock::now();
 	for (j = 1; j < img1g.size().width - 1; j++)
 	{	
 		for (i = 1; i < img1g.size().height - 1; i++)
@@ -39,12 +40,15 @@ int main()
 			}
 		}
 	} 
+	std::chrono::duration<double> sec = std::chrono::system_clock::now() - start;
+	std::cout << "걸린 시간(초) : " << sec.count() << " seconds" << std::endl;
 
 	imshow("img1", img1g);
 	imshow("img2", img2g);
 	imshow("sml1", sml1);
 	imshow("sml2", sml2);
 	imshow("result", result);
+	imwrite("SML.jpg", result);
 
 	cvWaitKey(0);
 }

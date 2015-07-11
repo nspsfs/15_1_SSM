@@ -79,7 +79,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="EOG_imageFusion.cpp" />
+    <ClCompile Include="EOL_imageFusion.cpp" />
     <ClCompile Include="smlMapMake.cpp" />
+    <ClCompile Include="tenengrad_imageFusion.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
