@@ -81,6 +81,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="3dWarping.cpp" />
     <ClCompile Include="Calibration_JC_ver.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="reprojection3D.cpp" />

@@ -16,6 +16,7 @@
 #include <opencv2\legacy\legacy.hpp>
 #include <opencv2\nonfree\nonfree.hpp>
 #include <opencv2\nonfree\features2d.hpp>
+#include <opencv2\opencv.hpp>
 
 using namespace cv;
 using namespace std;
@@ -206,9 +207,9 @@ int main(int argc, char *argv[]){
 	//F, H1 and H2 or in another way?
 	//Is there another way for obtain the xyz coordinates?
 
+	
 	cv::waitKey();
 	return 0;
 }
 
 #endif
- 
