@@ -1,3 +1,5 @@
+#if 0
+
 #include <iostream>
 #include <windows.h>
 #include "Header/EDSDK.h"
@@ -6,7 +8,6 @@
 #include <time.h>
 #include "opencv/cv.h"
 #include "opencv/highgui.h"
-#include "jpeglib.h"
 
 using namespace std;
 
@@ -118,6 +119,7 @@ int main()
 		//cvWaitKey(0);
 
 	cvDestroyWindow("Example1");
+
 	cvDestroyWindow("Example2");
 
 	///
@@ -164,3 +166,5 @@ int main()
 	
 	EdsTerminateSDK();
 }
+
+#endif

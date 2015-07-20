@@ -1,3 +1,5 @@
+#if 0
+
 #include <iostream>
 #include <windows.h>
 #include "Header/EDSDK.h"
@@ -312,3 +314,5 @@ void getNowTime()
 	nowtime = (string)buff;
 	return;
 }
+
+#endif

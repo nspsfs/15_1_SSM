@@ -1,3 +1,5 @@
+#if 0
+
 #include <iostream>
 #include <windows.h>
 #include "Header/EDSDK.h"
@@ -221,3 +223,5 @@ int main()
 	}
 	return 0;
 }
+
+#endif
