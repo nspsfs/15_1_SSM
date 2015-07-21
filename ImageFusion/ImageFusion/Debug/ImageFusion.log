@@ -1,9 +1,20 @@
-﻿빌드 시작: 2015-07-20 오전 7:54:03
+﻿빌드 시작: 2015-07-20 오후 4:40:13
      1>2 노드의 "C:\Project\15년1학기_창의과제\ImageFusion\ImageFusion\ImageFusion.vcxproj" 프로젝트(Build 대상)입니다.
-     1>Link:
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Project\15년1학기_창의과제\ImageFusion\packages\OpenCV.2.4.10\build\native\../../build/native/include/" /ZI /nologo /W3 /WX- /Od /Oy- /D HAS_OPENCV /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt EOG_imageFusion.cpp tenengrad_imageFusion.cpp
+         tenengrad_imageFusion.cpp
+     1>c:\project\15년1학기_창의과제\imagefusion\imagefusion\tenengrad_imagefusion.cpp(37): warning C4244: '=' : 'double'에서 'uchar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>c:\project\15년1학기_창의과제\imagefusion\imagefusion\tenengrad_imagefusion.cpp(38): warning C4244: '=' : 'double'에서 'uchar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+         EOG_imageFusion.cpp
+         코드를 생성하고 있습니다...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Project\15년1학기_창의과제\ImageFusion\Debug\ImageFusion.exe" /INCREMENTAL /NOLOGO "C:\Project\15년1학기_창의과제\ImageFusion\packages\OpenCV.2.4.10\build\native\../../build/native/lib/Win32/v120/Debug/opencv_videostab2410d.lib" "C:\Project\15년1학기_창의과제\ImageFusion\packages\OpenCV.2.4.10\build\native\../../build/native/lib/Win32/v120/Debug/opencv_video2410d.lib" "C:\Project\15년1학기_창의과제\ImageFusion\packages\OpenCV.2.4.10\build\native\../../build/native/lib/Win32/v120/Debug/opencv_ts2410d.lib" "C:\Project\15년1학기_창의과제\ImageFusion\packages\OpenCV.2.4.10\build\native\../../build/native/lib/Win32/v120/Debug/opencv_superres2410d.lib" "C:\Project\15년1학기_창의과제\ImageFusion\packages\OpenCV.2.4.10\build\native\../../build/native/lib/Win32/v120/Debug/opencv_stitching2410d.lib" "C:\Project\15년1학기_창의과제\ImageFusion\packages\OpenCV.2.4.10\build\native\../../build/native/lib/Win32/v120/Debug/opencv_photo2410d.lib" "C:\Project\15년1학기_창의과제\ImageFusion\packages\OpenCV.2.4.10\build\native\../../build/native/lib/Win32/v120/Debug/opencv_ocl2410d.lib" "C:\Project\15년1학기_창의과제\ImageFusion\packages\OpenCV.2.4.10\build\native\../../build/native/lib/Win32/v120/Debug/opencv_objdetect2410d.lib" "C:\Project\15년1학기_창의과제\ImageFusion\packages\OpenCV.2.4.10\build\native\../../build/native/lib/Win32/v120/Debug/opencv_nonfree2410d.lib" "C:\Project\15년1학기_창의과제\ImageFusion\packages\OpenCV.2.4.10\build\native\../../build/native/lib/Win32/v120/Debug/opencv_ml2410d.lib" "C:\Project\15년1학기_창의과제\ImageFusion\packages\OpenCV.2.4.10\build\native\../../build/native/lib/Win32/v120/Debug/opencv_legacy2410d.lib" "C:\Project\15년1학기_창의과제\ImageFusion\packages\OpenCV.2.4.10\build\native\../../build/native/lib/Win32/v120/Debug/opencv_imgproc2410d.lib" "C:\Project\15년1학기_창의과제\ImageFusion\packages\OpenCV.2.4.10\build\native\../../build/native/lib/Win32/v120/Debug/opencv_highgui2410d.lib" "C:\Project\15년1학기_창의과제\ImageFusion\packages\OpenCV.2.4.10\build\native\../../build/native/lib/Win32/v120/Debug/opencv_gpu2410d.lib" "C:\Project\15년1학기_창의과제\ImageFusion\packages\OpenCV.2.4.10\build\native\../../build/native/lib/Win32/v120/Debug/opencv_flann2410d.lib" "C:\Project\15년1학기_창의과제\ImageFusion\packages\OpenCV.2.4.10\build\native\../../build/native/lib/Win32/v120/Debug/opencv_features2d2410d.lib" "C:\Project\15년1학기_창의과제\ImageFusion\packages\OpenCV.2.4.10\build\native\../../build/native/lib/Win32/v120/Debug/opencv_core2410d.lib" "C:\Project\15년1학기_창의과제\ImageFusion\packages\OpenCV.2.4.10\build\native\../../build/native/lib/Win32/v120/Debug/opencv_contrib2410d.lib" "C:\Project\15년1학기_창의과제\ImageFusion\packages\OpenCV.2.4.10\build\native\../../build/native/lib/Win32/v120/Debug/opencv_calib3d2410d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Project\15년1학기_창의과제\ImageFusion\Debug\ImageFusion.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Project\15년1학기_창의과제\ImageFusion\Debug\ImageFusion.lib" /MACHINE:X86 Debug\EOG_imageFusion.obj
+         Debug\EOL_imageFusion.obj
+         Debug\smlMapMake.obj
+         Debug\tenengrad_imageFusion.obj
          ImageFusion.vcxproj -> C:\Project\15년1학기_창의과제\ImageFusion\Debug\ImageFusion.exe
      1>"C:\Project\15년1학기_창의과제\ImageFusion\ImageFusion\ImageFusion.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
 
 빌드했습니다.
 
-경과 시간: 00:00:00.10
+경과 시간: 00:00:01.79

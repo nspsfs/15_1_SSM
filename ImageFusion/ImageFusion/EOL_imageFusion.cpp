@@ -49,7 +49,7 @@ int main()
 		}
 	}
 	std::chrono::duration<double> sec = std::chrono::system_clock::now() - start;
-	std::cout << "걸린 시간(초) : " << sec.count() << " seconds" << std::endl;
+	std::cout << "EOL 걸린 시간(초) : " << sec.count() << " seconds" << std::endl;
 
 	imshow("img1", img1g);
 	imshow("img2", img2g);

@@ -1,4 +1,4 @@
-#if 1
+#if 0
 
 #include "opencv2\opencv.hpp"
 #include "opencv2\highgui\highgui.hpp"
@@ -9,8 +9,11 @@ using namespace cv;
 
 int main()
 {
-	Mat img1 = imread("image/cvt2.jpg");
-	Mat img2 = imread("image/test_R2.jpg");
+	/*Mat img1 = imread("image/cvt2.jpg");
+	Mat img2 = imread("image/test_R2.jpg");*/
+
+	Mat img1 = imread("image/test2_1.bmp");
+	Mat img2 = imread("image/test2_2.bmp");
 	Mat img1g;
 	Mat img2g;
 	
@@ -41,7 +44,7 @@ int main()
 		}
 	} 
 	std::chrono::duration<double> sec = std::chrono::system_clock::now() - start;
-	std::cout << "걸린 시간(초) : " << sec.count() << " seconds" << std::endl;
+	std::cout << "SML 걸린 시간(초) : " << sec.count() << " seconds" << std::endl;
 
 	imshow("img1", img1g);
 	imshow("img2", img2g);
