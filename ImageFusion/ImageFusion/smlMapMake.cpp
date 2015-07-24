@@ -9,8 +9,8 @@ using namespace cv;
 
 int main()
 {
-	Mat img1 = imread("image/test2_1.bmp");
-	Mat img2 = imread("image/test2_2.bmp");
+	Mat img1 = imread("image/test3_1.bmp");
+	Mat img2 = imread("image/test3_2.bmp");
 	Mat img1g;
 	Mat img2g;
 	

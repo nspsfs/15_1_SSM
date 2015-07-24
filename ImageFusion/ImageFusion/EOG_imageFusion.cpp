@@ -1,4 +1,4 @@
-#if 0
+#if 1
 
 #include "opencv2\opencv.hpp"
 #include "opencv2\highgui\highgui.hpp"
@@ -15,8 +15,8 @@ uchar usquare(uchar data)
 
 int main()
 {
-	Mat img1 = imread("image/test2_1.bmp");
-	Mat img2 = imread("image/test2_2.bmp");
+	Mat img1 = imread("image/test3_1.bmp");
+	Mat img2 = imread("image/test3_2.bmp");
 	Mat img1g;
 	Mat img2g;
 
@@ -42,7 +42,7 @@ int main()
 			{
 				result.at<uchar>(i, j) = img1g.at<uchar>(i, j);
 			}
-			else
+			elsek
 			{
 				result.at<uchar>(i, j) = img2g.at<uchar>(i, j);
 			}

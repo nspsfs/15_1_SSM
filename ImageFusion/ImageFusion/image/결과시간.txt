@@ -1,0 +1,12 @@
+test2				½Ã°£
+EOL  	: 0.52803 sec		[3]
+TenenGrad : 0.723041 sec	[4]
+EOG 	: 3.34202 sec		[1]
+SML 	: 0.410023 sec		[2]
+
+
+test3
+EOL 	: 0.34802 sec		[3]
+TenenGrad : 0.463027 sec	[4]
+EOG : 0.213012s sec		[1]
+SML 	: 0.275016 sec		[2]
