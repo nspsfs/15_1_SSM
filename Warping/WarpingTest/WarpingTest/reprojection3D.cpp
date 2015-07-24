@@ -1,4 +1,4 @@
-﻿#if 0
+﻿#if 1
 
 #include <opencv2\core\core.hpp>
 #include <opencv2\calib3d\calib3d.hpp>
@@ -202,6 +202,8 @@ int main(int argc, char *argv[]){
 	cv::reprojectImageTo3D(imgDisparity8U, xyz, Q, true);
 	imshow("test", xyz);
 		
+	Point3f p = xyz.at<Point3f>(320, 240);
+	cout << p.x << " " << p.y << " " << p.z << endl;
 
 	//How can I get the Q matrix? Is possibile to obtain the Q matrix with 
 	//F, H1 and H2 or in another way?

@@ -1,2 +1,6 @@
 #TargetFrameworkVersion=v4.0:PlatformToolSet=v120:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit
+<<<<<<< HEAD
 Debug|Win32|C:\Project\15년1학기_창의과제\Camera_control\CameraControl\|
+=======
+Debug|Win32|E:\Project_git\15년_1_창과(개인ver)\Camera_control\CameraControl\|
+>>>>>>> origin/master
