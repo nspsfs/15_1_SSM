@@ -1,3 +1,5 @@
+#if 0
+
 #include <iostream>
 #include <windows.h>
 #include "Header/EDSDK.h"
@@ -401,3 +403,5 @@ int liveView(EdsCameraRef camera1, EdsCameraRef camera2)
 
 	return 0;
 }
+
+#endif

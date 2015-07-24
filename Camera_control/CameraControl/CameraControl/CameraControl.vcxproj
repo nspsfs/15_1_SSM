@@ -95,6 +95,7 @@
     <ClCompile Include="shoot_down.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="최종_리팩토링.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\EDSDK.h" />

@@ -27,6 +27,9 @@
     <ClCompile Include="shootWithLiveView.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="최종_리팩토링.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\EDSDK.h">
