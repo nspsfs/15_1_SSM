@@ -56,6 +56,7 @@ string nowTime;
 int main()
 {
 	EdsError err = EDS_ERR_OK;
+	EdsTerminateSDK();
 	err = EdsInitializeSDK();
 	if (err != EDS_ERR_OK)
 	{
