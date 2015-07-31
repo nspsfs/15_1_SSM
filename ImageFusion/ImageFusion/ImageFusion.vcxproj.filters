@@ -30,5 +30,37 @@
     <ClCompile Include="EOL_imageFusion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="imageFusion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="changeViewPoint반대.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="changeViewPoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="new_imageFusion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="imageFusion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="changeViewPoint반대.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="changeViewPoint.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ne_imageFusion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
