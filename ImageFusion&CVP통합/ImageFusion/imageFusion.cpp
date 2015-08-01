@@ -87,9 +87,11 @@ void Fusion::sml(IplImage** dst)
 
 	IplImage* imgAvg = cvCloneImage(img1);
 	cvSet(imgAvg, cvScalarAll(2), 0);
-	cvDiv(img1, imgAvg, img1);
-	cvDiv(img2, imgAvg, img2);
-	cvAdd(img1, img2, imgAvg);
+	IplImage* img1Copy = cvCloneImage(img1);
+	IplImage* img2Copy = cvCloneImage(img2);
+	cvDiv(img1Copy, imgAvg, img1Copy);
+	cvDiv(img2Copy, imgAvg, img2Copy);
+	cvAdd(img1Copy, img2Copy, imgAvg);
 
 	CvMat* markers = cvCreateMat(size.height, size.width, CV_32SC1);
 	cvSetZero(markers);
@@ -135,11 +137,14 @@ void Fusion::sml(IplImage** dst)
 		}
 	}
 
-	IplImage* fusionImage = cvCloneImage(img1Gray);
+	//IplImage* fusionImageGray = cvCloneImage(img1Gray);
+	IplImage* fusionImage = cvCloneImage(img1);
 	for (int i = 1; i < size.height - 1; i++)
 	{
 		int* ptrMarkers = (int*)(markers->data.ptr + i * markers->step);
-		uchar* ptrimg2 = (uchar*)(img2Gray->imageData + (i*img2Gray->widthStep));
+		//uchar* ptrimgG2 = (uchar*)(img2Gray->imageData + (i*img2Gray->widthStep));
+		//uchar* ptrFimgG = (uchar*)(fusionImageGray->imageData + (i*fusionImageGray->widthStep));
+		uchar* ptrimg2 = (uchar*)(img2->imageData + (i*img2->widthStep));
 		uchar* ptrFimg = (uchar*)(fusionImage->imageData + (i*fusionImage->widthStep));
 		for (int j = 1; j < size.width - 1; j++)
 		{
@@ -147,14 +152,20 @@ void Fusion::sml(IplImage** dst)
 			{
 				if (j - 1 >= 0)
 				{
-					ptrFimg[j] = ptrFimg[j - 1];
+					//ptrFimgG[j] = ptrFimgG[j - 1];
+					ptrFimg[3 * j] = ptrFimg[3 * (j - 1)];
+					ptrFimg[3 * j + 1] = ptrFimg[3 * (j - 1) + 1];
+					ptrFimg[3 * j + 2] = ptrFimg[3 * (j - 1) + 2];
 				}
 			}
 			else
 			{
 				if (arrSml1[ptrMarkers[j]] < arrSml2[ptrMarkers[j]])
 				{
-					ptrFimg[j] = ptrimg2[j];
+					//ptrFimgG[j] = ptrimgG2[j];
+					ptrFimg[3*j] = ptrimg2[3*j];
+					ptrFimg[3 * j+1] = ptrimg2[3 * j+1];
+					ptrFimg[3 * j+2] = ptrimg2[3 * j+2];
 				}
 			}
 		}
@@ -169,6 +180,9 @@ void Fusion::sml(IplImage** dst)
 	cvReleaseImage(&sml1Thresh);
 	cvReleaseImage(&sml2Thresh);
 	cvReleaseImage(&imgAvg);
+	//cvReleaseImage(&fusionImageGray);
 	cvReleaseImage(&fusionImage);
+	cvReleaseImage(&img1Copy);
+	cvReleaseImage(&img2Copy);
 	cvReleaseMat(&markers);
 }
