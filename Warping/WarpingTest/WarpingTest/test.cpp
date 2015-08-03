@@ -1,3 +1,4 @@
+#if 0
 #include <iostream>
 #include "changeViewPoint.h"
 
@@ -24,3 +25,4 @@ int main()
 	
 	return 0;
 }
+#endif

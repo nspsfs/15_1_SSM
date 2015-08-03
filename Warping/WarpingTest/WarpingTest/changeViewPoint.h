@@ -1,3 +1,4 @@
+#if 0
 #pragma once
 
 #include <opencv2\core\core.hpp>
@@ -66,3 +67,4 @@ public:
 };
 
 
+#endif

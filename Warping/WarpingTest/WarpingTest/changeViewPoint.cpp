@@ -1,3 +1,4 @@
+#if 0
 #include "changeViewPoint.h"
 
 CVP::CVP()
@@ -88,3 +89,5 @@ void CVP::setimg(IplImage* dis, IplImage* left, IplImage* right)
 
 	return;
 }
+
+#endif
