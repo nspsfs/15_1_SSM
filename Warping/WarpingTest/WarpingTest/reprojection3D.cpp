@@ -16,6 +16,7 @@
 #include <opencv2\legacy\legacy.hpp>
 #include <opencv2\nonfree\nonfree.hpp>
 #include <opencv2\nonfree\features2d.hpp>
+#include <chrono>
 
 using namespace cv;
 using namespace std;
@@ -23,7 +24,7 @@ using namespace std;
 int main(int argc, char *argv[]){
 
 	cv::initModule_nonfree();
-
+	std::chrono::system_clock::time_point start = std::chrono::system_clock::now();
 	// Read the images
 	//Mat imgLeft = imread(argv[1], CV_LOAD_IMAGE_GRAYSCALE);
 	//Mat imgRight = imread(argv[2], CV_LOAD_IMAGE_GRAYSCALE);
@@ -207,7 +208,8 @@ int main(int argc, char *argv[]){
 	//How can I get the Q matrix? Is possibile to obtain the Q matrix with 
 	//F, H1 and H2 or in another way?
 	//Is there another way for obtain the xyz coordinates?
-
+	std::chrono::duration<double> sec = std::chrono::system_clock::now() - start;
+	std::cout << "시차변환 걸린 시간(초) : " << sec.count() << " seconds" << std::endl;
 	cv::waitKey();
 	return 0;
 }

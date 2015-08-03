@@ -8,15 +8,15 @@ using namespace std;
 
 int main()
 {
-	//IplImage* disparity = cvLoadImage("image/test2_disparity.jpg");
-	//IplImage* imgR = cvLoadImage("image/test2_R.jpg");
-	//IplImage* imgL = cvLoadImage("image/test2_L.jpg");
-	IplImage* disparity = cvLoadImage("image/disp.png");
-	IplImage* imgR = cvLoadImage("image/right.png");
-	IplImage* imgL = cvLoadImage("image/left.png");
+	IplImage* disparity = cvLoadImage("image/test_disparity.jpg");
+	IplImage* imgR = cvLoadImage("image/test_R.jpg");
+	IplImage* imgL = cvLoadImage("image/test_L.jpg");
+	//IplImage* disparity = cvLoadImage("image/disp.png");
+	//IplImage* imgR = cvLoadImage("image/right.png");
+	//IplImage* imgL = cvLoadImage("image/left.png");
 	CvSize size = cvGetSize(imgR);
 
-	int pixelDiff = 2;
+	int pixelDiff = 16;
 
 	IplImage* copyImgR = cvCloneImage(imgR);
 	IplImage* disparityGray = cvCreateImage(size,IPL_DEPTH_8U,1);
@@ -27,7 +27,9 @@ int main()
 	cvCvtColor(disparity, disparityGray, CV_RGB2GRAY);
 
 	IplImage* cvtR2LGray = cvCloneImage(imgLGray);
-	IplImage* cvtR2L = cvCloneImage(imgL);
+	//IplImage* cvtR2L = cvCloneImage(imgL);
+	IplImage* cvtR2L = cvCreateImage(size, IPL_DEPTH_8U, 1);
+	cvSetZero(cvtR2L);
 
 	std::chrono::system_clock::time_point start = std::chrono::system_clock::now();
 #pragma omp parallel for schedule(dynamic)
@@ -38,10 +40,11 @@ int main()
 		uchar* prtCopyImgR = (uchar*)(copyImgR->imageData + i*copyImgR->widthStep);
 		for (int j = 0; j < size.width; j++)
 		{
-			int tempVal = j + 1;// pDispG[j] / pixelDiff - j + 1;
-			tempVal -= pDispG[j] / pixelDiff;
+			//int tempVal = j + 1;// pDispG[j] / pixelDiff - j + 1;
+			//tempVal -= pDispG[j] / pixelDiff;
+			int tempVal = j + (pDispG[j] / pixelDiff);
 			//if (tempVal < size.width)
-			if (tempVal >= 0)
+			if (tempVal <size.width)
 			{
 				prtCvtR2L[3 * j] = prtCopyImgR[3 * tempVal];
 				prtCvtR2L[3 * j + 1] = prtCopyImgR[3 * tempVal + 1];

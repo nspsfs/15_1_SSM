@@ -149,7 +149,7 @@ void recordStart(EdsCameraRef camera, EdsCameraRef camera2)
 	start = GetTickCount();
 	err2 = EdsSetPropertyData(camera2, kEdsPropID_Record, 0, sizeof(record_start), &record_start2);
 	end = GetTickCount();
-	cout << "Delay : " << end - start << "(" << (end-start) / 30 << " frame)" << endl;
+	cout << "Delay : " << end - start << "(" << (end-start) / 24 << " frame)" << endl;
 	cvDestroyWindow("Example1");
 	cvDestroyWindow("Example2");
 }

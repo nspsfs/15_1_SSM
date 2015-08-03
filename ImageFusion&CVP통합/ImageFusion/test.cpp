@@ -7,12 +7,12 @@ using namespace std;
 int main()
 {
 	CVP cvp;
-	//IplImage* disparity = cvLoadImage("image/test3_disparity.jpg");
-	//IplImage* rightImage = cvLoadImage("image/test3_R.jpg");
-	//IplImage* leftImage = cvLoadImage("image/test3_L.jpg");
-	IplImage* disparity = cvLoadImage("disp.png");
-	IplImage* rightImage = cvLoadImage("right.png");
-	IplImage* leftImage = cvLoadImage("left.png");
+	IplImage* disparity = cvLoadImage("image/test1_disparity.jpg",0);
+	IplImage* rightImage = cvLoadImage("image/test1_R.jpg");
+	IplImage* leftImage = cvLoadImage("image/test1_L.jpg");
+	//IplImage* disparity = cvLoadImage("disp.png",0);
+	//IplImage* rightImage = cvLoadImage("right.png");
+	//IplImage* leftImage = cvLoadImage("left.png");
 	IplImage* convertImage = NULL;
 
 	cvp.setImg(disparity, leftImage, rightImage);
@@ -35,6 +35,7 @@ int main()
 	cvShowImage("image1", image1);
 	cvShowImage("image2", image2);
 	cvShowImage("MultiFocusImage", multiFocusImage);
+	//cvSaveImage("MFImg.jpg", multiFocusImage);
 
 
 	cvWaitKey(0);
