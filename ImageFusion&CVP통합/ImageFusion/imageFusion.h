@@ -19,4 +19,5 @@ public:
 	~Fusion();
 	void setImg(IplImage* image1, IplImage* image2);
 	void sml(IplImage** dst);
+	void backupsml(IplImage** dst);
 };

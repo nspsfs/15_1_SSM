@@ -7,7 +7,7 @@
 
 using namespace std;
 
-#define PixelDiff 21;
+#define PixelDiff 8;
 
 class CVP{
 	IplImage* disparity;
@@ -19,4 +19,5 @@ public:
 	~CVP();
 	void setImg(IplImage* dis, IplImage* left, IplImage* right);
 	void runcvt(IplImage** dst);
+	void runcvtinterpol(IplImage** dst);
 };

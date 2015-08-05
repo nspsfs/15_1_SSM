@@ -1,0 +1,261 @@
+﻿빌드 시작: 2015-08-04 오전 11:27:01
+     1>2 노드의 "C:\Project\15년1학기_창의과제\ImageFusion&CVP통합\ImageFusion\ImageFusion.vcxproj" 프로젝트(Build 대상)입니다.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Project\15년1학기_창의과제\ImageFusion&CVP통합\packages\OpenCV.2.4.10\build\native\../../build/native/include/" /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D HAS_OPENCV /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt changeViewPoint_old.cpp imageFusion_old.cpp
+         changeViewPoint_old.cpp
+     1>c:\project\15년1학기_창의과제\imagefusion&cvp통합\packages\opencv.2.4.10\build\native\include\opencv2\flann\dist.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>c:\project\15년1학기_창의과제\imagefusion&cvp통합\packages\opencv.2.4.10\build\native\include\opencv2\flann\logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : 'fopen' 선언을 참조하십시오.
+     1>changeViewPoint_old.cpp(12): error C2228: '.release' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'IplImage *' 형식입니다.
+                 대신 '->'을(를) 사용하려고 했습니까?
+     1>changeViewPoint_old.cpp(13): error C2228: '.release' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'IplImage *' 형식입니다.
+                 대신 '->'을(를) 사용하려고 했습니까?
+     1>changeViewPoint_old.cpp(14): error C2228: '.release' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'IplImage *' 형식입니다.
+                 대신 '->'을(를) 사용하려고 했습니까?
+     1>changeViewPoint_old.cpp(15): error C2065: 'dispG' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(15): error C2228: '.release' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>changeViewPoint_old.cpp(16): error C2065: 'imgLG' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(16): error C2228: '.release' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>changeViewPoint_old.cpp(17): error C2065: 'imgRG' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(17): error C2228: '.release' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>changeViewPoint_old.cpp(18): error C2065: 'cvtL2RC' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(18): error C2228: '.release' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>changeViewPoint_old.cpp(19): error C2065: 'cvtL2R' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(19): error C2228: '.release' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>changeViewPoint_old.cpp(20): error C2065: 'convertImg' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(20): error C2228: '.release' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>changeViewPoint_old.cpp(21): error C2065: 'copyImgR' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(21): error C2228: '.release' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>changeViewPoint_old.cpp(28): error C2228: '.empty' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'IplImage *' 형식입니다.
+                 대신 '->'을(를) 사용하려고 했습니까?
+     1>changeViewPoint_old.cpp(34): error C2065: 'copyImgR' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(34): error C2228: '.clone' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'IplImage *' 형식입니다.
+                 대신 '->'을(를) 사용하려고 했습니까?
+     1>changeViewPoint_old.cpp(35): error C2228: '.channels' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'IplImage *' 형식입니다.
+                 대신 '->'을(를) 사용하려고 했습니까?
+     1>changeViewPoint_old.cpp(36): error C2065: 'dispG' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(36): error C2228: '.clone' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'IplImage *' 형식입니다.
+                 대신 '->'을(를) 사용하려고 했습니까?
+     1>changeViewPoint_old.cpp(39): error C2065: 'dispG' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(39): error C3861: 'cvtColor': 식별자를 찾을 수 없습니다.
+     1>changeViewPoint_old.cpp(41): error C2065: 'imgLG' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(41): error C3861: 'cvtColor': 식별자를 찾을 수 없습니다.
+     1>changeViewPoint_old.cpp(42): error C2065: 'copyImgR' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(42): error C2065: 'imgRG' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(42): error C3861: 'cvtColor': 식별자를 찾을 수 없습니다.
+     1>changeViewPoint_old.cpp(45): error C2065: 'Mat' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(45): error C2146: 구문 오류 : ';'이(가) 'cvtL2RC' 식별자 앞에 없습니다.
+     1>changeViewPoint_old.cpp(45): error C2065: 'cvtL2RC' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(45): error C2228: '.clone' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'IplImage *' 형식입니다.
+                 대신 '->'을(를) 사용하려고 했습니까?
+     1>changeViewPoint_old.cpp(48): error C2065: 'dispG' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(48): error C2228: '.size' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>changeViewPoint_old.cpp(48): error C2228: '.height' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+     1>changeViewPoint_old.cpp(49): error C2065: 'dispG' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(49): error C2228: '.size' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>changeViewPoint_old.cpp(49): error C2228: '.width' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+     1>changeViewPoint_old.cpp(53): error C2065: 'dispG' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(53): error C2228: '.data' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>changeViewPoint_old.cpp(53): error C2228: '.step' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>changeViewPoint_old.cpp(54): error C2065: 'cvtL2RC' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(54): error C2228: '.data' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>changeViewPoint_old.cpp(54): error C2228: '.step' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>changeViewPoint_old.cpp(55): error C2065: 'copyImgR' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(55): error C2228: '.data' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>changeViewPoint_old.cpp(55): error C2228: '.step' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>changeViewPoint_old.cpp(94): error C2065: 'temp' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(94): error C2065: 'cvtL2RC' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(95): error C2065: 'temp' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(99): error C2039: 'setimg' : 'CVP'의 멤버가 아닙니다.
+                 c:\project\15년1학기_창의과제\imagefusion&cvp통합\imagefusion\changeViewPoint.h(12) : 'CVP' 선언을 참조하십시오.
+     1>changeViewPoint_old.cpp(103): error C2065: 'disparity' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(103): error C3861: 'cvarrToMat': 식별자를 찾을 수 없습니다.
+     1>changeViewPoint_old.cpp(104): error C2065: 'imgL' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(104): error C3861: 'cvarrToMat': 식별자를 찾을 수 없습니다.
+     1>changeViewPoint_old.cpp(105): error C2065: 'imgR' : 선언되지 않은 식별자입니다.
+     1>changeViewPoint_old.cpp(105): error C3861: 'cvarrToMat': 식별자를 찾을 수 없습니다.
+         imageFusion_old.cpp
+     1>c:\project\15년1학기_창의과제\imagefusion&cvp통합\packages\opencv.2.4.10\build\native\include\opencv2\flann\dist.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>c:\project\15년1학기_창의과제\imagefusion&cvp통합\packages\opencv.2.4.10\build\native\include\opencv2\flann\logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : 'fopen' 선언을 참조하십시오.
+     1>imageFusion_old.cpp(8): error C2065: 'img1G' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(9): error C2065: 'img2G' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(10): error C2065: 'sml1' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(11): error C2065: 'sml2' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(12): error C2065: 'result' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(17): error C2065: 'sml1' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(17): error C2228: '.release' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(18): error C2065: 'sml2' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(18): error C2228: '.release' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(19): error C2065: 'result' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(19): error C2228: '.release' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(20): error C2228: '.release' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'IplImage *' 형식입니다.
+                 대신 '->'을(를) 사용하려고 했습니까?
+     1>imageFusion_old.cpp(21): error C2228: '.release' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'IplImage *' 형식입니다.
+                 대신 '->'을(를) 사용하려고 했습니까?
+     1>imageFusion_old.cpp(22): error C2065: 'img1G' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(22): error C2228: '.release' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(23): error C2065: 'img2G' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(23): error C2228: '.release' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(24): error C2065: 'result' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(24): error C2228: '.release' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(28): error C2039: 'setimg' : 'Fusion'의 멤버가 아닙니다.
+                 c:\project\15년1학기_창의과제\imagefusion&cvp통합\imagefusion\imageFusion.h(11) : 'Fusion' 선언을 참조하십시오.
+     1>imageFusion_old.cpp(31): error C2065: 'img1' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(31): error C3861: 'cvarrToMat': 식별자를 찾을 수 없습니다.
+     1>imageFusion_old.cpp(32): error C2065: 'img2' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(32): error C3861: 'cvarrToMat': 식별자를 찾을 수 없습니다.
+     1>imageFusion_old.cpp(33): error C2065: 'img1' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(33): error C2065: 'img1G' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(33): error C2065: 'COLOR_BGR2GRAY' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(33): error C3861: 'cvtColor': 식별자를 찾을 수 없습니다.
+     1>imageFusion_old.cpp(34): error C2065: 'img2' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(34): error C2065: 'img2G' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(34): error C2065: 'COLOR_BGR2GRAY' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(34): error C3861: 'cvtColor': 식별자를 찾을 수 없습니다.
+     1>imageFusion_old.cpp(36): error C2065: 'sml1' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(36): error C2065: 'img1G' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(36): error C2228: '.clone' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(37): error C2065: 'sml2' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(37): error C2065: 'img2G' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(37): error C2228: '.clone' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(38): error C2065: 'sml1' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(38): error C3861: 'Scalar': 식별자를 찾을 수 없습니다.
+     1>imageFusion_old.cpp(39): error C2065: 'sml2' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(39): error C3861: 'Scalar': 식별자를 찾을 수 없습니다.
+     1>imageFusion_old.cpp(40): error C2065: 'result' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(40): error C2065: 'img1' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(40): error C2228: '.clone' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(58): error C2065: 'temp' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(59): error C2065: 'temp' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(83): error C2065: 'img1G' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(83): error C2228: '.data' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(83): error C2228: '.step' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(84): error C2065: 'img1G' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(84): error C2228: '.data' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(84): error C2228: '.step' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(85): error C2065: 'img1G' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(85): error C2228: '.data' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(85): error C2228: '.step' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(87): error C2065: 'img2G' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(87): error C2228: '.data' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(87): error C2228: '.step' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(88): error C2065: 'img2G' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(88): error C2228: '.data' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(88): error C2228: '.step' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(89): error C2065: 'img2G' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(89): error C2228: '.data' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(89): error C2228: '.step' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(114): error C2228: '.data' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'IplImage *' 형식입니다.
+                 대신 '->'을(를) 사용하려고 했습니까?
+     1>imageFusion_old.cpp(114): error C2228: '.step' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'IplImage *' 형식입니다.
+                 대신 '->'을(를) 사용하려고 했습니까?
+     1>imageFusion_old.cpp(115): error C2228: '.data' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'IplImage *' 형식입니다.
+                 대신 '->'을(를) 사용하려고 했습니까?
+     1>imageFusion_old.cpp(115): error C2228: '.step' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'IplImage *' 형식입니다.
+                 대신 '->'을(를) 사용하려고 했습니까?
+     1>imageFusion_old.cpp(146): error C2065: 'temp' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(147): error C2065: 'temp' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(152): error C2039: 'segsml' : 'Fusion'의 멤버가 아닙니다.
+                 c:\project\15년1학기_창의과제\imagefusion&cvp통합\imagefusion\imageFusion.h(11) : 'Fusion' 선언을 참조하십시오.
+     1>imageFusion_old.cpp(173): error C2065: 'temp' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(173): error C2065: 'img1' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(174): error C2065: 'temp' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(203): error C2065: 'img1G' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(203): error C2228: '.data' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(203): error C2228: '.step' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(204): error C2065: 'img1G' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(204): error C2228: '.data' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(204): error C2228: '.step' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(205): error C2065: 'img1G' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(205): error C2228: '.data' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(205): error C2228: '.step' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(207): error C2065: 'img2G' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(207): error C2228: '.data' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(207): error C2228: '.step' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(208): error C2065: 'img2G' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(208): error C2228: '.data' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(208): error C2228: '.step' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(209): error C2065: 'img2G' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(209): error C2228: '.data' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(209): error C2228: '.step' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(257): error C2065: 'img1' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(257): error C2228: '.data' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(257): error C2228: '.step' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(258): error C2065: 'img2' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(258): error C2228: '.data' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(258): error C2228: '.step' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+                 'unknown-type' 형식입니다.
+     1>imageFusion_old.cpp(309): error C2065: 'temp' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(309): error C2065: 'img1' : 선언되지 않은 식별자입니다.
+     1>imageFusion_old.cpp(309): fatal error C1003: 오류 수가 100개를 초과했습니다. 컴파일을 중지합니다.
+     1>"C:\Project\15년1학기_창의과제\ImageFusion&CVP통합\ImageFusion\ImageFusion.vcxproj" 프로젝트를 빌드했습니다(Build 대상). - 실패
+
+빌드하지 못했습니다.
+
+경과 시간: 00:00:02.15
